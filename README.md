@@ -29,9 +29,6 @@ be able to autoload the class during the object creation.
 include '/vendor/autoload.php';
 ```
 
-
-```
-
 ## Usage
 
 Has just 1 function.
@@ -40,6 +37,6 @@ Has just 1 function.
 
 Registers a new template. Takes the slug and name as arguments. Eg:
 
-```
+```php
 \Leean\PageTemplates::register('training', 'Training');
 ```
