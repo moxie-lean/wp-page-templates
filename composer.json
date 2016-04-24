@@ -1,5 +1,5 @@
 {
-  "name": "moxie-leean/wp-page-templates",
+  "name": "moxie-lean/wp-page-templates",
   "description": "A way of registering page templates from a plugin",
   "keywords": ["wordpress"],
   "homepage": "https://github.com/moxie-leean/wp-page-templates",
@@ -16,12 +16,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Leean\\": "src/"
+      "Lean\\": "src/"
     }
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "2.*",
-    "wp-coding-standards/wpcs": "dev-master"
+    "wp-coding-standards/wpcs": "0.9.0"
   },
   "scripts": {
     "installSniffer": [
