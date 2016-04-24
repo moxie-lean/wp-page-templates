@@ -1,10 +1,9 @@
-<?php namespace Leean;
+<?php namespace Lean;
 
 /**
  * Class to provide page template functions.
  */
-class PageTemplates
-{
+class PageTemplates {
 	/**
 	 * Register a page template
 	 *
