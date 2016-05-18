@@ -2,7 +2,7 @@
   "name": "moxie-lean/wp-page-templates",
   "description": "A way of registering page templates from a plugin",
   "keywords": ["wordpress"],
-  "homepage": "https://github.com/moxie-leean/wp-page-templates",
+  "homepage": "https://github.com/moxie-lean/wp-page-templates",
   "type": "library",
   "license": "MIT",
   "authors": [
