@@ -5,12 +5,36 @@
  */
 class PageTemplates {
 	/**
+	 * An array for storage of the new templates
+	 *
+	 * @var array
+	 */
+	protected static $templates = [];
+	/**
 	 * Register a page template
 	 *
 	 * @param string $slug The slug
 	 * @param string $name The name
 	 */
 	public static function register( $slug, $name ) {
+		if ( version_compare( floatval( get_bloginfo( 'version' ) ), '4.7', '<' ) ) {
+			self::old_register( $slug, $name );
+		} else {
+			self::$templates[ $slug ] = $name;
+			add_filter( 'theme_page_templates', [ __CLASS__, 'register_template' ] );
+		}
+	}
+
+	/**
+	 * Filter to add custom page templates
+	 *
+	 * @param array $templates An array with the current templates.
+	 */
+	public static function register_template( $templates ) {
+		return array_merge( $templates, self::$templates );
+	}
+
+	protected static function old_register( $slug, $name ) {
 		// Create the key used for the themes cache.
 		$cache_key = 'page_templates-' . md5( get_theme_root() . '/' . get_stylesheet() );
 
@@ -26,9 +50,8 @@ class PageTemplates {
 		// Now add our template to the list of templates by merging our templates
 		// with the existing templates array from the cache.
 		$templates = array_merge( $templates, [
-				$slug  => $name,
-			]
-		);
+			$slug  => $name,
+		]);
 
 		// Add the modified cache to allow WordPress to pick it up for listing
 		// available templates.
