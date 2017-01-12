@@ -30,7 +30,7 @@ class PageTemplates {
 	 *
 	 * @param array $templates An array with the current templates.
 	 */
-	protected static function register_template( $templates ) {
+	public static function register_template( $templates ) {
 		return array_merge( $templates, self::$templates );
 	}
 
